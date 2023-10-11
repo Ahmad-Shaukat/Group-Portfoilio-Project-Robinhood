@@ -114,7 +114,7 @@ export function NewTransaction() {
   useEffect(async () => {
     
 
-    if (symbol.length > 1) {
+    if (symbol.length > 0) {
       // console.log (symbol, '------------this is symbol')
 
       let value = await dispatch(getStockCurrent(symbol));

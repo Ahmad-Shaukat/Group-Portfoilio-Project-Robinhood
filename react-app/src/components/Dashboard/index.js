@@ -49,12 +49,12 @@ export default function ShowDashboard() {
         </div>
       </div>
       <div class="fixed-bar">
-        <div class="transaction-Form">
+        {/* <div class="transaction-Form">
           <NewTransaction />
         </div>
         <div id="inventory">
           <Transactions />
-        </div>
+        </div> */}
         <div class="stock-watchlist">
           <WatchLists />
         </div>

@@ -123,14 +123,23 @@ export default function Portfolio() {
     let returnObject = {};
     let data = dates;
     let dataEntries = Object.entries(data);
+    let savedKey;
+    // console.log("data entries",dataEntries)
     dataEntries.forEach((e) => {
       let dailyTotal = 0;
       let key = e[0];
       let value = e[1];
       let symbols = Object.keys(value);
+      // console.log("symbols", symbols, stockData)
       symbols.forEach((sym) => {
         let total = 0;
-        total = value[sym] * stockData[sym][key][0].value;
+        // console.log("this",key,sym,stockData[sym], stockData)
+        if(stockData[sym][key]){
+          total = value[sym] * stockData[sym][key][0].value;
+          savedKey = key
+        }else{
+          total = value[sym] * stockData[sym][savedKey][0].value;
+        }
         dailyTotal += total;
         return total;
       });
